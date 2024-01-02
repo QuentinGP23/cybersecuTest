@@ -8,6 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main></main>
+    <main>test</main>
 </body>
 </html>
