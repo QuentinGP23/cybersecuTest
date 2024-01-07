@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once 'db.php';
-
-// Générer un token CSRF pour le formulaire de suppression
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: index.php');
+    exit();
+}
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// Récupérer les articles et leurs titres pour les afficher
 $sql = "SELECT article.id_article, article.titre, article.contenu, article.datepubli, article.chemin_image, utilisateur.nom, utilisateur.prenom 
         FROM article 
         JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur";
@@ -91,7 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer'])) {
         <?php else: ?>
             <p>Aucun article trouvé.</p>
         <?php endif; ?>
-
         <form action="admin.php" method="post">
             <h2>Supprimer un article</h2>
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">

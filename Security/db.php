@@ -16,4 +16,21 @@ try {
     error_log($e->getMessage());
     exit('Un problème est survenu. Veuillez réessayer plus tard.');
 }
+
+$allowed_paths = ['article.php', 'connexion.php','inscription.php', 'admin.php', 'index.php', 'deconnexion.php',  'db.php', 'change-email.php', 'ajouter_article.php'];
+
+$current_path = basename($_SERVER['SCRIPT_NAME']);
+$current_params = $_GET;
+
+if (!in_array($current_path, $allowed_paths) || !validateParameters($current_params, $current_path)) {
+    die("URL non autorisée.");
+}
+
+function validateParameters($params, $path)
+{
+    if ($path == 'article.php' && (!isset($params['id']) || !is_numeric($params['id']))) {
+        return false;
+    }
+    return true;
+}
 ?>
