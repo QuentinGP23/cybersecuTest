@@ -2,8 +2,8 @@
 require_once __DIR__ . '/../config.php';
 
 $servername = getenv('DB_SERVER') ?: 'localhost';
-$username = getenv('DB_USERNAME') ?: 'admin';
-$password = getenv('DB_PASSWORD') ?: 'test';
+$username = getenv('DB_USERNAME') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: '';
 $dbname = getenv('DB_NAME') ?: 'secu';
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -32,5 +32,13 @@ function validateParameters($params, $path)
         return false;
     }
     return true;
+}
+if (isset($_SESSION['id_utilisateur']) && in_array($current_path, ['connexion.php', 'inscription.php'])) {
+    header('Location: index.php');
+    exit();
+}
+if (!isset($_SESSION['id_utilisateur']) && !in_array($current_path, ['connexion.php', 'inscription.php'])) {
+    die("URL non autorisée.");
+    exit();
 }
 ?>

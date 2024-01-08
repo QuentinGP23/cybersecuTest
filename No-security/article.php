@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
 <html lang="fr">
 
 <body>
-    <main>
+    <main class="article">
         <h1>
             <?php echo $article['titre']; ?>
         </h1>

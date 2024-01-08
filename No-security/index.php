@@ -36,9 +36,6 @@ $result = $conn->query($sql);
                     <p>Auteur :
                         <?php echo $row['prenom'] . ' ' . $row['nom']; ?>
                     </p>
-                    <p>Publié le :
-                        <?php echo $row['datepubli']; ?>
-                    </p>
                     <a href="article.php?id=<?php echo $row['id_article']; ?>">
                         <p>voir plus</p>
                     </a>

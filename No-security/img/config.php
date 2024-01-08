@@ -1,6 +1,6 @@
 <?php
 putenv('DB_SERVER=localhost');
-putenv('DB_USERNAME=root');
-putenv('DB_PASSWORD=');
+putenv('DB_USERNAME=admin');
+putenv('DB_PASSWORD=test');
 putenv('DB_NAME=secu');
 ?>

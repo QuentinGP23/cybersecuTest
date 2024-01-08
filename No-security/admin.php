@@ -70,9 +70,6 @@ if (isset($_POST['supprimer']) && isset($_POST['id_article'])) {
                     <p>Auteur :
                         <?php echo $row['prenom'] . ' ' . $row['nom']; ?>
                     </p>
-                    <p>Publié le :
-                        <?php echo $row['datepubli']; ?>
-                    </p>
                     <a href="article.php?id=<?php echo $row['id_article']; ?>">
                         <p>voir plus</p>
                     </a>

@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <main>
+    <main class="article">
         <h1><?php echo htmlspecialchars($article['titre']); ?></h1>
         <img src="<?php echo htmlspecialchars($article['chemin_image']); ?>" alt="Image de l'article">
         <p><?php echo htmlspecialchars($article['contenu']); ?></p>

@@ -1,0 +1,21 @@
+.article{
+    form{
+        align-items: flex-start;
+        textarea{
+            width: 100%;
+            border-radius:0;
+            border:0;
+            box-sizing: border-box;
+            border-bottom: 2px solid #1D2B53;
+        }
+    }
+    .commentaire{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 2px solid #1d2b5353;
+        p:first-of-type{
+            width:100%;
+        }
+    }
+}

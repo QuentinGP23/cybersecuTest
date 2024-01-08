@@ -83,9 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer'])) {
                     <p>Auteur :
                         <?php echo htmlspecialchars($row['prenom'] . ' ' . $row['nom']); ?>
                     </p>
-                    <p>Publié le :
-                        <?php echo htmlspecialchars($row['datepubli']); ?>
-                    </p>
                     <a href="article.php?id=<?php echo htmlspecialchars($row['id_article']); ?>">Voir plus</a>
                 </div>
             <?php endwhile; ?>
