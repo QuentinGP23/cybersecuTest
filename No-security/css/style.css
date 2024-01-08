@@ -1,8 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 body {
   background: #f4f4f4;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
+  font-family: "Oswald", sans-serif;
+  color: #1D2B53;
+}
+body h1 {
+  text-align: center;
+  text-transform: capitalize;
+}
+body h1 + img {
+  width: 100%;
 }
 
 main {
@@ -25,21 +35,93 @@ main {
   background-color: #fff;
 }
 .articleAdmin img {
-  max-height: 100%;
+  height: 100%;
+}
+.articleAdmin a {
+  margin-right: 16px;
 }
 
 .articleAdmin:not(:last-of-type) {
   margin-bottom: 16px;
 }
 
+a {
+  text-decoration: none;
+  color: #FF004D;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 12px 24px;
+  border: 0;
+  background-color: #1D2B53;
+  color: #f4f4f4;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #1D2B53;
+  background-color: #f4f4f4;
+  width: fit-content;
+  min-width: 40%;
+}
+
+input[type=file] {
+  border: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.article form {
+  align-items: flex-start;
+}
+.article form textarea {
+  width: 100%;
+  border-radius: 0;
+  border: 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid #1D2B53;
+}
+.article .commentaire {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(29, 43, 83, 0.3254901961);
+}
+.article .commentaire p:first-of-type {
+  width: 100%;
+}
+
+.connexion {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
 .connexion form {
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 50px;
   background: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  gap: 8px;
+  min-width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
